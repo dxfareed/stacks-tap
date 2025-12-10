@@ -9,8 +9,14 @@ export default function Home() {
   const [userData, setUserData] = useState<any>(null);
 
   useEffect(() => {
-    if (userSession.isUserSignedIn()) {
-      setUserData(userSession.loadUserData());
+    try {
+      if (userSession.isUserSignedIn()) {
+        setUserData(userSession.loadUserData());
+      }
+    } catch (e) {
+      console.error("Session error in page:", e);
+      // userSession.signUserOut() is handled in WalletConnect or effectively happens here by not setting data
+      setUserData(null);
     }
   }, []);
 

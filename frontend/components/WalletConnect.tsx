@@ -15,14 +15,20 @@ export const WalletConnect: React.FC<WalletConnectProps> = ({ onConnect, onDisco
 
     useEffect(() => {
         setMounted(true);
-        if (userSession.isUserSignedIn()) {
-            setIsSignedIn(true);
-            onConnect();
-        } else if (userSession.isSignInPending()) {
-            userSession.handlePendingSignIn().then(() => {
+        try {
+            if (userSession.isUserSignedIn()) {
                 setIsSignedIn(true);
                 onConnect();
-            });
+            } else if (userSession.isSignInPending()) {
+                userSession.handlePendingSignIn().then(() => {
+                    setIsSignedIn(true);
+                    onConnect();
+                });
+            }
+        } catch (e) {
+            console.error("Session error, signing out:", e);
+            userSession.signUserOut();
+            setIsSignedIn(false);
         }
     }, [onConnect]);
 
