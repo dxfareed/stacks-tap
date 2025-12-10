@@ -48,8 +48,6 @@ export const Faucet: React.FC = () => {
             </h2>
             <p className="text-lg text-black font-medium mb-8 border-b-2 border-dashed border-black pb-4">
                 Claim <span className="p-1 bg-[#ffc900] border-2 border-black">0.01 STX</span> every 24 hours.
-                <br />
-                <span className="text-sm opacity-70 mt-2 block">(Testnet Only)</span>
             </p>
 
             {txId && (

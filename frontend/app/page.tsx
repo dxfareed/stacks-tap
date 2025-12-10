@@ -49,7 +49,7 @@ export default function Home() {
         {!userData ? (
           <div className="text-center neo-box p-12 max-w-2xl bg-[#a3ffae]">
             <h2 className="text-5xl font-black text-black mb-6 uppercase leading-none">
-              Get Your Testnet <br /> Tokens Here
+              Get Your <br /> Tokens Here
             </h2>
             <p className="text-xl text-black font-bold mb-8">
               Connect your wallet to start claiming. No strings attached (mostly).
@@ -66,7 +66,7 @@ export default function Home() {
       </main>
 
       <footer className="w-full bg-black text-white py-8 text-center font-bold uppercase tracking-widest text-xs border-t-4 border-black">
-        &copy; {new Date().getFullYear()} Stacks Tap. Build Bold.
+        &copy; {new Date().getFullYear()} Stacks Tap by dxfareed. Build Bold.
       </footer>
     </div>
   );
