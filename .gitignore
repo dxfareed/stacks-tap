@@ -1,0 +1,9 @@
+# Clarinet
+.cache/
+requirements/
+checkers/
+tmp/
+
+# OS
+.DS_Store
+Thumbs.db

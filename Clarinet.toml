@@ -1,0 +1,15 @@
+[project]
+name = "stacks-faucet"
+description = "A Stacks Faucet project"
+authors = []
+telemetry = true
+cache_dir = "./.cache"
+requirements = []
+
+[contracts.faucet]
+path = "contracts/faucet.clar"
+clarity_version = 2
+epoch = 2.5
+
+[repl.analysis]
+passes = ["check_checker"]
