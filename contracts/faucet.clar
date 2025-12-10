@@ -32,6 +32,13 @@
         
         ;; Update Claim History
         (map-set ConstantClaims caller current-block)
+
+        ;; Clarity 4 / Epoch 3.0 Feature: Principal Destruct
+        ;; We log the destructed principal for advanced tracking/debugging
+        (match (principal-destruct? caller)
+            success (print { event: "claim", user: caller, type: (get name success) })
+            error (print { event: "claim-error", user: caller, code: error })
+        )
         
         (ok true)
     )
