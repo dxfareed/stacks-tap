@@ -1,1 +1,79 @@
 @import "tailwindcss";
+
+:root {
+    /* Neo-Brutalism Palette */
+    --bg-main: #f0f0f0;
+    --bg-card: #ffffff;
+    --color-black: #000000;
+    --color-accent: #ff90e8;
+    /* Pink */
+    --color-accent-2: #ffc900;
+    /* Yellow */
+    --color-accent-3: #23a094;
+    /* Teal */
+
+    --shadow-hard: 4px 4px 0px 0px var(--color-black);
+    --border-thick: 3px solid var(--color-black);
+
+    --font-sans: 'Space Grotesk', sans-serif;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--color-black);
+    font-family: var(--font-sans);
+    min-height: 100vh;
+}
+
+/* Utilities for Neo-Brutalism */
+.neo-box {
+    background-color: var(--bg-card);
+    border: var(--border-thick);
+    box-shadow: var(--shadow-hard);
+    transition: all 0.1s ease-in-out;
+}
+
+.neo-box:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px 0px var(--color-black);
+}
+
+.neo-button {
+    background-color: var(--color-accent-2);
+    border: var(--border-thick);
+    box-shadow: var(--shadow-hard);
+    font-weight: 800;
+    text-transform: uppercase;
+    padding: 0.75rem 1.5rem;
+    transition: all 0.1s ease;
+}
+
+.neo-button:hover:not(:disabled) {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px 0px var(--color-black);
+}
+
+.neo-button:active:not(:disabled) {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px 0px var(--color-black);
+}
+
+.neo-button:disabled {
+    background-color: #d1d5db;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+
+.neo-input {
+    border: var(--border-thick);
+    padding: 0.75rem;
+    font-weight: bold;
+    background: white;
+    width: 100%;
+}
+
+.neo-input:focus {
+    outline: none;
+    background-color: #fffde7;
+}

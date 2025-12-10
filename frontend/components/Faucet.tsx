@@ -42,28 +42,33 @@ export const Faucet: React.FC = () => {
     };
 
     return (
-        <div className="p-6 bg-white rounded-lg shadow-md max-w-md mx-auto mt-10">
-            <h2 className="text-2xl font-bold mb-4 text-gray-800">Stacks Faucet</h2>
-            <p className="text-gray-600 mb-6">
-                Claim 0.01 STX every 24 hours. (Testnet/Devnet)
+        <div className="neo-box p-8 rounded-none max-w-lg mx-auto mt-20 bg-white">
+            <h2 className="text-4xl font-extrabold mb-6 text-black uppercase tracking-tight">
+                Stacks Faucet
+            </h2>
+            <p className="text-lg text-black font-medium mb-8 border-b-2 border-dashed border-black pb-4">
+                Claim <span className="p-1 bg-[#ffc900] border-2 border-black">0.01 STX</span> every 24 hours.
+                <br />
+                <span className="text-sm opacity-70 mt-2 block">(Testnet Only)</span>
             </p>
 
             {txId && (
-                <div className="mb-4 p-4 bg-green-50 text-green-700 rounded break-all">
-                    <p className="font-semibold">Transaction sent!</p>
-                    <p className="text-sm mt-1">{txId}</p>
+                <div className="mb-6 p-4 bg-[#ff90e8] border-3 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                    <p className="font-bold text-black uppercase">Transaction sent!</p>
+                    <p className="text-xs mt-2 font-mono break-all bg-white border-2 border-black p-2">
+                        {txId}
+                    </p>
                 </div>
             )}
 
             <button
                 onClick={claimTokens}
                 disabled={isClaiming}
-                className={`w-full py-3 px-4 rounded font-bold text-white transition-colors ${isClaiming
-                    ? 'bg-gray-400 cursor-not-allowed'
-                    : 'bg-indigo-600 hover:bg-indigo-700'
-                    }`}
+                className={`neo-button w-full text-xl py-4 
+          ${isClaiming ? 'opacity-50' : 'bg-[#ffc900] hover:bg-[#ffdb4d]'}
+        `}
             >
-                {isClaiming ? 'Claiming...' : 'Claim 0.01 STX'}
+                {isClaiming ? 'Claiming...' : 'GIMME STACKS'}
             </button>
         </div>
     );

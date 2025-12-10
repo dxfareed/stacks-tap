@@ -60,14 +60,14 @@ export const WalletConnect: React.FC<WalletConnectProps> = ({ onConnect, onDisco
             {isSignedIn ? (
                 <button
                     onClick={disconnect}
-                    className="px-4 py-2 text-sm font-medium text-red-600 border border-red-600 rounded hover:bg-red-50"
+                    className="neo-button bg-red-400 text-black hover:bg-red-500"
                 >
                     Disconnect
                 </button>
             ) : (
                 <button
                     onClick={authenticate}
-                    className="px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded hover:bg-indigo-700"
+                    className="neo-button bg-[#23a094] text-black hover:bg-[#1b7a71]"
                 >
                     Connect Wallet
                 </button>
